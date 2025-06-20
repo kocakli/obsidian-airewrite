@@ -1,0 +1,262 @@
+/* Geminify Plugin Styles */
+
+/* Progress Modal */
+.geminify-progress-modal .modal-content {
+    padding: 30px;
+    text-align: center;
+}
+
+.geminify-progress-modal h2 {
+    margin-bottom: 20px;
+    color: var(--text-normal);
+}
+
+.progress-container {
+    background-color: var(--background-modifier-border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+    height: 20px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed);
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.progress-status {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* Preview Modal */
+.geminify-preview-modal {
+    width: 90%;
+    max-width: 900px;
+}
+
+.geminify-preview-modal .modal-content {
+    padding: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.geminify-preview-modal h2 {
+    margin-bottom: 20px;
+    color: var(--text-normal);
+    border-bottom: 2px solid var(--background-modifier-border);
+    padding-bottom: 10px;
+}
+
+.text-container {
+    background: var(--background-secondary);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.text-container.original {
+    border-left: 4px solid var(--interactive-accent);
+}
+
+.text-container.rewritten {
+    border-left: 4px solid #10b981;
+}
+
+.text-preview {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: var(--font-monospace);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--text-normal);
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    padding: 10px;
+    background: var(--background-modifier-border);
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.positive-change {
+    color: #10b981;
+}
+
+.negative-change {
+    color: #ef4444;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* Style Selector Modal */
+.geminify-style-modal .modal-content {
+    padding: 20px;
+    max-width: 600px;
+}
+
+.geminify-style-modal h2 {
+    margin-bottom: 10px;
+    color: var(--text-normal);
+}
+
+.style-description {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.style-options {
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.style-option {
+    padding: 15px;
+    border: 2px solid var(--background-modifier-border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.style-option:hover {
+    border-color: var(--interactive-accent);
+    background-color: var(--background-modifier-hover);
+}
+
+.style-option h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: var(--text-normal);
+}
+
+.style-option p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Error Modal */
+.geminify-error-modal .modal-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.geminify-error-modal h2 {
+    color: #ef4444;
+    margin-bottom: 15px;
+}
+
+.error-container {
+    background: var(--background-secondary);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #ef4444;
+    text-align: left;
+}
+
+.error-container p {
+    margin: 0;
+    color: var(--text-normal);
+    font-family: var(--font-monospace);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Settings Enhancements */
+.geminify-settings .setting-item-description h3 {
+    color: var(--text-normal);
+    margin: 15px 0 8px 0;
+}
+
+.geminify-settings .setting-item-description ol {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.geminify-settings .setting-item-description li {
+    margin: 5px 0;
+    color: var(--text-muted);
+}
+
+/* Context Menu Items */
+.menu-item[data-geminify] {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-item[data-geminify]::before {
+    content: '🤖';
+    font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .geminify-preview-modal {
+        width: 95%;
+    }
+    
+    .stats-container {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+    
+    .button-container {
+        flex-direction: column;
+    }
+    
+    .style-options {
+        gap: 8px;
+    }
+}
+
+/* Dark Mode Adjustments */
+.theme-dark .progress-bar {
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+}
+
+.theme-dark .text-container.original {
+    border-left-color: #6366f1;
+}
+
+.theme-dark .text-container.rewritten {
+    border-left-color: #22c55e;
+}
+
+/* Animation for smooth transitions */
+.geminify-progress-modal,
+.geminify-preview-modal,
+.geminify-style-modal,
+.geminify-error-modal {
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
