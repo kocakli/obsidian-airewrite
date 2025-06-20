@@ -10,7 +10,8 @@
       "Bash(git remote set-url:*)",
       "Bash(mkdir:*)",
       "Bash(tree:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(cp:*)"
     ],
     "deny": []
   }
