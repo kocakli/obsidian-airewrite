@@ -1,25 +1,25 @@
 import { Notice } from 'obsidian';
 
-export class GeminifyNotice extends Notice {
+export class AIRewriteNotice extends Notice {
 	constructor(message: string, timeout?: number) {
 		super(message, timeout || 5000);
 	}
 }
 
 export function showError(message: string): void {
-	new GeminifyNotice(`❌ ${message}`, 8000);
+	new AIRewriteNotice(`❌ ${message}`, 8000);
 }
 
 export function showSuccess(message: string): void {
-	new GeminifyNotice(`✅ ${message}`, 3000);
+	new AIRewriteNotice(`✅ ${message}`, 3000);
 }
 
 export function showInfo(message: string): void {
-	new GeminifyNotice(`ℹ️ ${message}`, 5000);
+	new AIRewriteNotice(`ℹ️ ${message}`, 5000);
 }
 
 export function showWarning(message: string): void {
-	new GeminifyNotice(`⚠️ ${message}`, 6000);
+	new AIRewriteNotice(`⚠️ ${message}`, 6000);
 }
 
 export function sanitizeText(text: string): string {

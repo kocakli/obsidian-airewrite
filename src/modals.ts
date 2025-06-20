@@ -9,14 +9,14 @@ export class ProgressModal extends Modal {
 
 	constructor(app: App) {
 		super(app);
-		this.modalEl.addClass('geminify-progress-modal');
+		this.modalEl.addClass('airewrite-progress-modal');
 	}
 
 	onOpen() {
 		const { contentEl } = this;
 		contentEl.empty();
 
-		contentEl.createEl('h2', { text: '🤖 Geminify Çalışıyor...' });
+		contentEl.createEl('h2', { text: '🤖 AIRewrite Çalışıyor...' });
 		
 		const progressContainer = contentEl.createDiv('progress-container');
 		progressContainer.style.cssText = `
@@ -78,7 +78,7 @@ export class PreviewModal extends Modal {
 		this.result = result;
 		this.onAccept = onAccept;
 		this.onReject = onReject;
-		this.modalEl.addClass('geminify-preview-modal');
+		this.modalEl.addClass('airewrite-preview-modal');
 	}
 
 	onOpen() {
@@ -187,7 +187,7 @@ export class StyleSelectorModal extends Modal {
 	constructor(app: App, onStyleSelect: (style: WritingStyle | null) => void) {
 		super(app);
 		this.onStyleSelect = onStyleSelect;
-		this.modalEl.addClass('geminify-style-modal');
+		this.modalEl.addClass('airewrite-style-modal');
 	}
 
 	onOpen() {
@@ -300,7 +300,7 @@ export class ErrorModal extends Modal {
 	constructor(app: App, error: string) {
 		super(app);
 		this.error = error;
-		this.modalEl.addClass('geminify-error-modal');
+		this.modalEl.addClass('airewrite-error-modal');
 	}
 
 	onOpen() {

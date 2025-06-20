@@ -1,7 +1,7 @@
 {
   "name": "obsidian-airewrite",
   "version": "1.0.0",
-  "description": "Transform your notes with Google Gemini AI - rewrite, enhance, and improve your content instantly",
+  "description": "Transform your notes with AI - rewrite, enhance, and improve your content instantly using Google Gemini",
   "main": "main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs",
@@ -16,8 +16,16 @@
     "rewrite",
     "notes"
   ],
-  "author": "Oguzhan Kocakli",
+  "author": "kocakli",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kocakli/obsidian-airewrite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kocakli/obsidian-airewrite/issues"
+  },
+  "homepage": "https://github.com/kocakli/obsidian-airewrite",
   "devDependencies": {
     "@types/node": "^16.11.6",
     "@typescript-eslint/eslint-plugin": "5.29.0",

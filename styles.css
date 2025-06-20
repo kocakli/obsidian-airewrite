@@ -1,12 +1,12 @@
-/* Geminify Plugin Styles */
+/* AIRewrite Plugin Styles */
 
 /* Progress Modal */
-.geminify-progress-modal .modal-content {
+.airewrite-progress-modal .modal-content {
     padding: 30px;
     text-align: center;
 }
 
-.geminify-progress-modal h2 {
+.airewrite-progress-modal h2 {
     margin-bottom: 20px;
     color: var(--text-normal);
 }
@@ -33,18 +33,18 @@
 }
 
 /* Preview Modal */
-.geminify-preview-modal {
+.airewrite-preview-modal {
     width: 90%;
     max-width: 900px;
 }
 
-.geminify-preview-modal .modal-content {
+.airewrite-preview-modal .modal-content {
     padding: 20px;
     max-height: 80vh;
     overflow-y: auto;
 }
 
-.geminify-preview-modal h2 {
+.airewrite-preview-modal h2 {
     margin-bottom: 20px;
     color: var(--text-normal);
     border-bottom: 2px solid var(--background-modifier-border);
@@ -105,12 +105,12 @@
 }
 
 /* Style Selector Modal */
-.geminify-style-modal .modal-content {
+.airewrite-style-modal .modal-content {
     padding: 20px;
     max-width: 600px;
 }
 
-.geminify-style-modal h2 {
+.airewrite-style-modal h2 {
     margin-bottom: 10px;
     color: var(--text-normal);
 }
@@ -153,12 +153,12 @@
 }
 
 /* Error Modal */
-.geminify-error-modal .modal-content {
+.airewrite-error-modal .modal-content {
     padding: 20px;
     text-align: center;
 }
 
-.geminify-error-modal h2 {
+.airewrite-error-modal h2 {
     color: #ef4444;
     margin-bottom: 15px;
 }
@@ -181,36 +181,36 @@
 }
 
 /* Settings Enhancements */
-.geminify-settings .setting-item-description h3 {
+.airewrite-settings .setting-item-description h3 {
     color: var(--text-normal);
     margin: 15px 0 8px 0;
 }
 
-.geminify-settings .setting-item-description ol {
+.airewrite-settings .setting-item-description ol {
     margin: 10px 0;
     padding-left: 20px;
 }
 
-.geminify-settings .setting-item-description li {
+.airewrite-settings .setting-item-description li {
     margin: 5px 0;
     color: var(--text-muted);
 }
 
 /* Context Menu Items */
-.menu-item[data-geminify] {
+.menu-item[data-airewrite] {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.menu-item[data-geminify]::before {
+.menu-item[data-airewrite]::before {
     content: '🤖';
     font-size: 12px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .geminify-preview-modal {
+    .airewrite-preview-modal {
         width: 95%;
     }
     
@@ -243,10 +243,10 @@
 }
 
 /* Animation for smooth transitions */
-.geminify-progress-modal,
-.geminify-preview-modal,
-.geminify-style-modal,
-.geminify-error-modal {
+.airewrite-progress-modal,
+.airewrite-preview-modal,
+.airewrite-style-modal,
+.airewrite-error-modal {
     animation: fadeIn 0.2s ease-out;
 }
 

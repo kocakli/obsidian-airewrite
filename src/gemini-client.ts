@@ -19,9 +19,8 @@ export class GeminiClient {
 
 		try {
 			this.genAI = new GoogleGenerativeAI(this.settings.apiKey);
-			console.log('Gemini API client initialized with model:', this.settings.model);
 		} catch (error) {
-			console.error('Gemini API client initialization failed:', error);
+			// Initialization failed, client will remain null
 		}
 	}
 
@@ -44,16 +43,7 @@ export class GeminiClient {
 			const text = response.text();
 			return text && text.length > 0;
 		} catch (error: any) {
-			console.error('API key validation error:', error);
-			
-			// Log detailed error for debugging
-			if (error.message) {
-				console.error('Error message:', error.message);
-			}
-			if (error.status) {
-				console.error('Error status:', error.status);
-			}
-			
+			// API key validation failed
 			return false;
 		}
 	}
