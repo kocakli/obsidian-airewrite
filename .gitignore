@@ -66,3 +66,33 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+# Development artifacts (keep local, don't track)
+FINAL_SUBMISSION_STEPS.md
+GITHUB_RELEASE_INSTRUCTIONS.md
+GITHUB_RELEASE_NOTES.md
+OBSIDIAN_PR_TEMPLATE.md
+OBSIDIAN_SUBMISSION_STEPS.md
+PR_TEMPLATE.md
+QUICK_SUBMISSION_GUIDE.md
+RELEASE_NOTES.md
+RELEASE_NOTES_v*.md
+SUBMISSION_CHECKLIST.md
+SUBMISSION_INSTRUCTIONS.md
+
+# Submission artifacts
+COMMUNITY_PLUGINS_ENTRY.json
+community-plugin-submission.json
+
+# Test files
+ICON_TEST_RESULTS.md
+test-scenarios.md
+
+# IDE configurations
+.idea/
+.claude/
+
+# Development notes
+*.notes.md
+dev-*.md
+temp-*.md
+dev-docs/
