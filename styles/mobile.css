@@ -1,0 +1,452 @@
+/* AIRewrite Mobile Styles */
+
+/* Mobile Detection */
+.is-mobile .airewrite-mobile-modal {
+	max-width: 95vw !important;
+	max-height: 90vh !important;
+	margin: 5vh auto !important;
+}
+
+/* Floating Action Button */
+.airewrite-floating-button {
+	position: fixed;
+	bottom: 80px;
+	right: 20px;
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border: none;
+	font-size: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	z-index: 1000;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	animation: airewrite-float-in 0.3s ease-out;
+}
+
+.airewrite-floating-button:hover {
+	transform: scale(1.1);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.airewrite-floating-button:active {
+	transform: scale(0.95);
+}
+
+@keyframes airewrite-float-in {
+	from {
+		opacity: 0;
+		transform: scale(0.8) translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
+}
+
+/* Mobile Modal Styles */
+.airewrite-mobile-modal .modal-content {
+	padding: 20px !important;
+	border-radius: 12px !important;
+}
+
+.airewrite-mobile-modal .airewrite-modal-title {
+	font-size: 1.4em !important;
+	margin-bottom: 20px !important;
+	text-align: center !important;
+	color: var(--text-accent) !important;
+}
+
+/* Mobile Progress Modal */
+.airewrite-mobile-modal .airewrite-progress-container {
+	width: 100%;
+	height: 8px;
+	background-color: var(--background-modifier-border);
+	border-radius: 10px;
+	overflow: hidden;
+	margin: 20px 0;
+}
+
+.airewrite-mobile-modal .airewrite-progress-bar {
+	height: 100%;
+	background: linear-gradient(90deg, var(--interactive-accent), var(--interactive-accent-hover));
+	width: 0%;
+	transition: width 0.3s ease;
+	border-radius: 10px;
+}
+
+.airewrite-mobile-modal .airewrite-progress-status {
+	text-align: center;
+	margin: 15px 0;
+	color: var(--text-muted);
+	font-size: 0.9em;
+}
+
+.airewrite-cancel-button-mobile {
+	width: 100%;
+	padding: 12px;
+	margin-top: 20px;
+	background: var(--background-modifier-border);
+	color: var(--text-normal);
+	border: none;
+	border-radius: 8px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+.airewrite-cancel-button-mobile:hover {
+	background: var(--background-modifier-border-hover);
+}
+
+/* Mobile Preview Modal */
+.airewrite-mobile-modal .airewrite-preview-section {
+	margin: 20px 0;
+}
+
+.airewrite-mobile-modal .airewrite-preview-section h3 {
+	margin: 0 0 10px 0 !important;
+	font-size: 1.1em !important;
+	color: var(--text-accent) !important;
+}
+
+.airewrite-mobile-modal .airewrite-preview-text {
+	padding: 15px;
+	border-radius: 8px;
+	font-size: 14px;
+	line-height: 1.5;
+	max-height: 200px;
+	overflow-y: auto;
+	margin-bottom: 15px;
+	word-wrap: break-word;
+}
+
+.airewrite-mobile-modal .airewrite-original-text {
+	background: var(--background-secondary);
+	border-left: 3px solid var(--text-muted);
+}
+
+.airewrite-mobile-modal .airewrite-rewritten-text {
+	background: var(--background-primary-alt);
+	border-left: 3px solid var(--interactive-accent);
+}
+
+/* Mobile Button Container */
+.airewrite-mobile-buttons {
+	display: flex !important;
+	flex-direction: column !important;
+	gap: 12px !important;
+	margin-top: 25px !important;
+}
+
+.airewrite-button-primary-mobile {
+	width: 100%;
+	padding: 16px 20px;
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border: none;
+	border-radius: 10px;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	min-height: 48px; /* Accessibility - minimum touch target */
+}
+
+.airewrite-button-primary-mobile:hover {
+	background: var(--interactive-accent-hover);
+	transform: translateY(-1px);
+}
+
+.airewrite-button-primary-mobile:active {
+	transform: translateY(0);
+}
+
+.airewrite-button-secondary-mobile {
+	width: 100%;
+	padding: 16px 20px;
+	background: var(--background-modifier-border);
+	color: var(--text-normal);
+	border: 2px solid var(--background-modifier-border-hover);
+	border-radius: 10px;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	min-height: 48px; /* Accessibility - minimum touch target */
+}
+
+.airewrite-button-secondary-mobile:hover {
+	background: var(--background-modifier-border-hover);
+	border-color: var(--background-modifier-border-focus);
+}
+
+.airewrite-button-secondary-mobile:active {
+	transform: scale(0.98);
+}
+
+/* Mobile Style Selector */
+.airewrite-mobile-styles {
+	display: grid !important;
+	grid-template-columns: 1fr !important;
+	gap: 12px !important;
+	margin-top: 20px !important;
+}
+
+.airewrite-style-button-mobile {
+	display: flex;
+	align-items: center;
+	padding: 16px;
+	background: var(--background-secondary);
+	border: 2px solid var(--background-modifier-border);
+	border-radius: 12px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	text-align: left;
+	min-height: 60px; /* Accessibility - minimum touch target */
+}
+
+.airewrite-style-button-mobile:hover {
+	background: var(--background-primary-alt);
+	border-color: var(--interactive-accent);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.airewrite-style-button-mobile:active {
+	transform: translateY(0);
+}
+
+.airewrite-style-emoji {
+	font-size: 24px;
+	margin-right: 15px;
+	min-width: 30px;
+}
+
+.airewrite-style-label {
+	font-weight: 600;
+	font-size: 16px;
+	color: var(--text-normal);
+	margin-bottom: 4px;
+}
+
+.airewrite-style-description {
+	font-size: 13px;
+	color: var(--text-muted);
+	line-height: 1.3;
+}
+
+/* Mobile Settings */
+.is-mobile .airewrite-settings {
+	padding: 20px 15px !important;
+}
+
+.is-mobile .airewrite-settings .setting-item {
+	padding: 15px 0 !important;
+	border-bottom: 1px solid var(--background-modifier-border) !important;
+}
+
+.is-mobile .airewrite-settings .setting-item-name {
+	font-size: 16px !important;
+	margin-bottom: 8px !important;
+}
+
+.is-mobile .airewrite-settings .setting-item-description {
+	font-size: 14px !important;
+	line-height: 1.4 !important;
+}
+
+.is-mobile .airewrite-settings input[type="text"],
+.is-mobile .airewrite-settings input[type="password"],
+.is-mobile .airewrite-settings select {
+	width: 100% !important;
+	padding: 12px !important;
+	font-size: 16px !important; /* Prevents zoom on iOS */
+	border-radius: 8px !important;
+	margin-top: 8px !important;
+}
+
+/* Touch Feedback */
+.is-mobile .airewrite-mobile-modal * {
+	-webkit-tap-highlight-color: transparent;
+}
+
+.is-mobile .airewrite-style-button-mobile:active,
+.is-mobile .airewrite-button-primary-mobile:active,
+.is-mobile .airewrite-button-secondary-mobile:active {
+	background: var(--background-modifier-active-hover) !important;
+}
+
+/* Swipe Indicators */
+.airewrite-swipe-hint {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 12px;
+	color: var(--text-faint);
+	text-align: center;
+}
+
+.airewrite-swipe-hint::before {
+	content: "👈 Swipe left to reject • Swipe right to accept 👉";
+}
+
+/* iOS Specific Styles */
+.is-ios .airewrite-mobile-modal {
+	padding-top: env(safe-area-inset-top) !important;
+	padding-bottom: env(safe-area-inset-bottom) !important;
+}
+
+.is-ios .airewrite-floating-button {
+	bottom: calc(80px + env(safe-area-inset-bottom)) !important;
+}
+
+/* Android Specific Styles */
+.is-android .airewrite-mobile-modal {
+	border-radius: 0 !important;
+	max-height: 100vh !important;
+	margin: 0 !important;
+}
+
+/* Dark Mode Optimizations */
+.theme-dark .airewrite-floating-button {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.theme-dark .airewrite-style-button-mobile:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Reduce Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+	.airewrite-floating-button,
+	.airewrite-style-button-mobile,
+	.airewrite-button-primary-mobile,
+	.airewrite-button-secondary-mobile {
+		transition: none !important;
+		animation: none !important;
+	}
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: high) {
+	.airewrite-style-button-mobile {
+		border-width: 3px !important;
+	}
+	
+	.airewrite-button-primary-mobile,
+	.airewrite-button-secondary-mobile {
+		border: 3px solid var(--text-normal) !important;
+	}
+}
+
+/* Language Dropdown Clean Background Styles */
+.airewrite-mobile-dropdown {
+	width: 100% !important;
+	min-height: 44px;
+	font-size: 16px;
+	border-radius: 8px;
+	padding: 12px;
+	border: 1px solid var(--background-modifier-border);
+	
+	/* CLEAN BACKGROUND - Remove patterned background */
+	background: var(--background-primary) !important;
+	background-image: none !important;
+	background-pattern: none !important;
+	color: var(--text-normal) !important;
+	
+	/* Remove any inherited patterns */
+	box-shadow: none;
+	text-shadow: none;
+}
+
+/* Dropdown options clean background */
+.airewrite-mobile-dropdown option {
+	background: var(--background-primary) !important;
+	color: var(--text-normal) !important;
+	background-image: none !important;
+}
+
+/* Hover state */
+.airewrite-mobile-dropdown:hover {
+	background: var(--background-primary) !important;
+	border-color: var(--interactive-accent);
+}
+
+/* Focus state */
+.airewrite-mobile-dropdown:focus {
+	background: var(--background-primary) !important;
+	border-color: var(--interactive-accent);
+	outline: none;
+	box-shadow: 0 0 0 2px var(--interactive-accent-hover);
+}
+
+/* Language section container clean styling */
+.airewrite-language-section {
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	padding: 16px;
+	margin: 16px 0;
+	background: var(--background-secondary) !important;
+	background-image: none !important;
+}
+
+/* Setting row dropdown wrapper */
+.airewrite-language-section .setting-item-control {
+	background: transparent !important;
+}
+
+/* Dropdown parent container clean */
+.airewrite-language-section .dropdown {
+	background: transparent !important;
+	background-image: none !important;
+}
+
+/* Mobile-specific dropdown overrides */
+@media (max-width: 768px) {
+	.airewrite-mobile-dropdown {
+		min-height: 48px;
+		font-size: 18px;
+		
+		/* Mobile extra clean background */
+		background: var(--background-primary) !important;
+		background-image: none !important;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		
+		/* Custom arrow for better visibility */
+		background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><polyline points='6,9 12,15 18,9'></polyline></svg>") !important;
+		background-repeat: no-repeat !important;
+		background-position: right 12px center !important;
+		background-size: 16px !important;
+		padding-right: 40px;
+	}
+}
+
+/* Dark mode compatibility */
+.theme-dark .airewrite-mobile-dropdown {
+	background: var(--background-primary) !important;
+	color: var(--text-normal) !important;
+	border-color: var(--background-modifier-border);
+}
+
+/* Light mode compatibility */
+.theme-light .airewrite-mobile-dropdown {
+	background: var(--background-primary) !important;
+	color: var(--text-normal) !important;
+	border-color: var(--background-modifier-border);
+}
+
+/* Clean background utility class */
+.airewrite-clean-background {
+	background: var(--background-primary) !important;
+	background-image: none !important;
+	background-pattern: none !important;
+}

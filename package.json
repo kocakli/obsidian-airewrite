@@ -1,6 +1,6 @@
 {
   "name": "obsidian-airewrite",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "description": "Transform your notes with AI - rewrite, enhance, and improve your content instantly using Google Gemini",
   "main": "main.js",
   "scripts": {

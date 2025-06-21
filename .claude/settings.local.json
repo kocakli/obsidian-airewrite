@@ -11,7 +11,13 @@
       "Bash(mkdir:*)",
       "Bash(tree:*)",
       "Bash(git add:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git tag:*)",
+      "Bash(rm:*)",
+      "Bash(cat:*)"
     ],
     "deny": []
   }

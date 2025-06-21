@@ -1,4 +1,5 @@
 /* AIRewrite Plugin Styles */
+@import url('styles/mobile.css');
 
 /* Progress Modal */
 .airewrite-progress-modal .modal-content {
@@ -242,11 +243,251 @@
     border-left-color: #22c55e;
 }
 
+/* Language Rewrite Styles */
+.airewrite-language-section {
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	padding: 16px;
+	margin: 16px 0;
+	background: var(--background-secondary);
+}
+
+.airewrite-language-section h3 {
+	margin: 0 0 16px 0;
+	color: var(--text-normal);
+	font-size: 16px;
+	font-weight: 600;
+	border-bottom: 1px solid var(--background-modifier-border);
+	padding-bottom: 8px;
+}
+
+.airewrite-mobile-dropdown {
+	width: 100% !important;
+	min-height: 44px; /* Touch-friendly */
+	font-size: 16px; /* Prevent zoom on iOS */
+	border-radius: 8px;
+	padding: 12px;
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-primary);
+	color: var(--text-normal);
+}
+
+.language-preview {
+	margin-top: 16px;
+}
+
+.language-preview-box {
+	background: var(--background-modifier-border);
+	border-radius: 6px;
+	padding: 12px;
+	border-left: 4px solid var(--interactive-accent);
+	font-size: 14px;
+}
+
+.language-preview-note {
+	color: var(--text-muted);
+	font-size: 12px;
+	font-style: italic;
+}
+
+@media (max-width: 768px) {
+	.airewrite-mobile-dropdown {
+		min-height: 48px; /* Larger on mobile */
+		font-size: 18px;
+	}
+	
+	.airewrite-language-section {
+		padding: 12px;
+		margin: 12px 0;
+	}
+	
+	.language-preview-box {
+		padding: 10px;
+		font-size: 13px;
+	}
+}
+
+/* Security Education Styles */
+.security-section {
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+    background: var(--background-primary-alt);
+}
+
+.security-section h3 {
+    margin: 0 0 10px 0;
+    color: var(--text-normal);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.security-status-container {
+    margin: 10px 0;
+}
+
+.security-status-text {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.security-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.security-actions button {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.security-help-icon {
+    margin-left: 8px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.security-help-icon:hover {
+    opacity: 1;
+}
+
+/* Security Modals */
+.airewrite-security-welcome-modal,
+.airewrite-security-tips-modal,
+.airewrite-security-check-modal {
+    width: 90%;
+    max-width: 600px;
+}
+
+.airewrite-security-welcome-modal .modal-content,
+.airewrite-security-tips-modal .modal-content,
+.airewrite-security-check-modal .modal-content {
+    padding: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.security-welcome-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.security-welcome-title {
+    color: var(--text-normal);
+    margin-bottom: 8px;
+}
+
+.security-welcome-subtitle {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.security-welcome-content,
+.security-tips-container {
+    margin: 20px 0;
+}
+
+.security-section {
+    margin-bottom: 20px;
+}
+
+.security-section h3 {
+    color: var(--text-normal);
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.security-section p {
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.security-section ul {
+    padding-left: 20px;
+    color: var(--text-muted);
+}
+
+.security-section li {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.security-welcome-buttons,
+.security-tips-buttons,
+.security-check-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.security-check-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.security-score {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.security-issues-section,
+.security-recommendations-section {
+    margin: 15px 0;
+}
+
+.security-issues-section h3,
+.security-recommendations-section h3 {
+    color: var(--text-normal);
+    margin-bottom: 10px;
+}
+
+.security-tips-section {
+    margin-bottom: 20px;
+}
+
+.security-tips-section h3 {
+    color: var(--text-normal);
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.security-tips-section ul {
+    padding-left: 20px;
+}
+
+.security-tips-section li {
+    margin: 8px 0;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.security-tips-section a {
+    color: var(--text-accent);
+    text-decoration: none;
+}
+
+.security-tips-section a:hover {
+    text-decoration: underline;
+}
+
 /* Animation for smooth transitions */
 .airewrite-progress-modal,
 .airewrite-preview-modal,
 .airewrite-style-modal,
-.airewrite-error-modal {
+.airewrite-error-modal,
+.airewrite-security-welcome-modal,
+.airewrite-security-tips-modal,
+.airewrite-security-check-modal {
     animation: fadeIn 0.2s ease-out;
 }
 

@@ -1,6 +1,7 @@
 import { Editor, MarkdownView, Notice } from 'obsidian';
 import { GeminiClient } from './gemini-client';
 import { RewriteOptions, WritingStyle, GeminiResponse } from './types';
+import { DynamicPromptManager } from './dynamic-prompt-manager';
 
 export interface RewriteResult {
 	originalText: string;
@@ -21,10 +22,12 @@ export enum RewriteStrategy {
 
 export class RewriteEngine {
 	private geminiClient: GeminiClient;
+	private promptManager: DynamicPromptManager;
 	private progressCallback?: (progress: number, status: string) => void;
 
-	constructor(geminiClient: GeminiClient) {
+	constructor(geminiClient: GeminiClient, promptManager: DynamicPromptManager) {
 		this.geminiClient = geminiClient;
+		this.promptManager = promptManager;
 	}
 
 	setProgressCallback(callback: (progress: number, status: string) => void) {
@@ -97,16 +100,16 @@ export class RewriteEngine {
 
 		this.updateProgress(10, 'Gemini API ile bağlantı kuruluyor...');
 
-		const rewriteOptions: RewriteOptions = {
-			text: text,
-			style: options.style,
-			customPrompt: options.customPrompt
-		};
+		// Generate dynamic system prompt based on settings and style
+		const systemPrompt = this.promptManager.generateSystemPrompt(options.style);
+		
+		// Generate user prompt with custom instructions if provided
+		const userPrompt = this.promptManager.generateUserPrompt(text, options.style, options.customPrompt);
 
 		this.updateProgress(30, 'Metin analiz ediliyor...');
 
 		try {
-			const response: GeminiResponse = await this.geminiClient.rewriteText(rewriteOptions);
+			const response: GeminiResponse = await this.geminiClient.generateWithPrompts(systemPrompt, userPrompt);
 			
 			this.updateProgress(80, 'Sonuç işleniyor...');
 
@@ -237,5 +240,69 @@ export class RewriteEngine {
 	public validateTextLength(text: string, maxTokens: number = 2048): boolean {
 		const estimatedTokens = this.estimateTokens(text);
 		return estimatedTokens <= maxTokens;
+	}
+
+	// Generic rewrite method for mobile support
+	async rewrite(
+		text: string,
+		style: WritingStyle,
+		instructions?: string,
+		timeout: number = 10000,
+		progressCallback?: (progress: number, status: string) => void
+	): Promise<RewriteResult> {
+		if (progressCallback) {
+			this.setProgressCallback(progressCallback);
+		}
+
+		this.updateProgress(10, 'Starting rewrite...');
+
+		if (!text.trim()) {
+			return {
+				originalText: text,
+				rewrittenText: '',
+				success: false,
+				error: 'Please provide text to rewrite'
+			};
+		}
+
+		const rewriteOptions: RewriteOptions = {
+			text: text,
+			style: style,
+			customPrompt: instructions
+		};
+
+		this.updateProgress(30, 'Analyzing text...');
+
+		try {
+			const response: GeminiResponse = await this.geminiClient.rewriteText(rewriteOptions);
+			
+			this.updateProgress(80, 'Processing result...');
+
+			if (!response.success) {
+				return {
+					originalText: text,
+					rewrittenText: '',
+					success: false,
+					error: response.error
+				};
+			}
+
+			this.updateProgress(100, 'Complete!');
+
+			return {
+				originalText: text,
+				rewrittenText: response.text,
+				success: true
+			};
+
+		} catch (error: any) {
+			this.updateProgress(0, 'Error occurred');
+			return {
+				originalText: text,
+				rewrittenText: '',
+				success: false,
+				error: `Unexpected error: ${error.message || 'Unknown error'}`
+			};
+		}
 	}
 }

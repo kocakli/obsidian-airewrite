@@ -4,6 +4,15 @@ export interface AIRewriteSettings {
 	systemPrompt: string;
 	temperature: number;
 	maxTokens: number;
+	securityEducationShown: boolean;
+	mobileSecurityAcknowledged: boolean;
+	languageRewrite: {
+		enabled: boolean;
+		targetLanguage: string;
+		customLanguage?: string;
+		preserveFormatting: boolean;
+		culturalAdaptation: boolean;
+	};
 }
 
 export interface GeminiResponse {
@@ -24,7 +33,9 @@ export enum WritingStyle {
 	CASUAL = 'casual',
 	BLOG = 'blog',
 	TECHNICAL = 'technical',
-	CREATIVE = 'creative'
+	CREATIVE = 'creative',
+	BUSINESS = 'business',
+	SIMPLE = 'simple'
 }
 
 export enum GeminiModel {

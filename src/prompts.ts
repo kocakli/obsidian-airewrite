@@ -13,7 +13,11 @@ export const STYLE_PROMPTS: Record<WritingStyle, string> = {
 	
 	[WritingStyle.TECHNICAL]: "Bu metni teknik dokümantasyon standartlarına uygun şekilde yeniden yaz. Açık, kesin ve adım adım anlaşılır olacak şekilde düzenle. SADECE yeniden yazılan metni ver, hiçbir açıklama ekleme.",
 	
-	[WritingStyle.CREATIVE]: "Bu metni yaratıcı ve etkileyici bir şekilde yeniden yaz. Çekici anlatım teknikleri ve özgün ifadeler kullan. SADECE yeniden yazılan metni ver, hiçbir açıklama ekleme."
+	[WritingStyle.CREATIVE]: "Bu metni yaratıcı ve etkileyici bir şekilde yeniden yaz. Çekici anlatım teknikleri ve özgün ifadeler kullan. SADECE yeniden yazılan metni ver, hiçbir açıklama ekleme.",
+	
+	[WritingStyle.BUSINESS]: "Bu metni iş dünyasına uygun, profesyonel ve özlü bir şekilde yeniden yaz. Net, etkili ve sonuç odaklı bir üslup kullan. SADECE yeniden yazılan metni ver, hiçbir açıklama ekleme.",
+	
+	[WritingStyle.SIMPLE]: "Bu metni herkesın kolayca anlayabileceği basit ve açık bir dille yeniden yaz. Karmaşık kelimeler yerine sade ifadeler kullan. SADECE yeniden yazılan metni ver, hiçbir açıklama ekleme."
 };
 
 export function buildPrompt(baseText: string, style?: WritingStyle, customPrompt?: string): string {

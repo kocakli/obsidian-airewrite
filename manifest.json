@@ -1,11 +1,11 @@
 {
   "id": "airewrite",
   "name": "AIRewrite",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "minAppVersion": "0.15.0",
-  "description": "Transform your notes with AI - rewrite, enhance, and improve your content instantly using Google Gemini",
+  "description": "Transform your notes with AI - now with full mobile support! Works on desktop, iOS, and Android.",
   "author": "kocakli",
   "authorUrl": "https://github.com/kocakli",
   "fundingUrl": "https://github.com/sponsors/kocakli",
-  "isDesktopOnly": true
+  "isDesktopOnly": false
 }

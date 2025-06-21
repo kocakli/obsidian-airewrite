@@ -67,17 +67,20 @@ export class PreviewModal extends Modal {
 	private result: RewriteResult;
 	private onAccept: () => void;
 	private onReject: () => void;
+	private customTitle?: string;
 
 	constructor(
 		app: App, 
 		result: RewriteResult, 
 		onAccept: () => void, 
-		onReject: () => void
+		onReject: () => void,
+		customTitle?: string
 	) {
 		super(app);
 		this.result = result;
 		this.onAccept = onAccept;
 		this.onReject = onReject;
+		this.customTitle = customTitle;
 		this.modalEl.addClass('airewrite-preview-modal');
 	}
 
@@ -85,7 +88,8 @@ export class PreviewModal extends Modal {
 		const { contentEl } = this;
 		contentEl.empty();
 
-		contentEl.createEl('h2', { text: '📝 Yeniden Yazılan İçerik Önizlemesi' });
+		const title = this.customTitle || '📝 Yeniden Yazılan İçerik Önizlemesi';
+		contentEl.createEl('h2', { text: title });
 
 		// Original text section
 		const originalSection = contentEl.createDiv('original-section');

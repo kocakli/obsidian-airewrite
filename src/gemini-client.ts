@@ -70,6 +70,29 @@ export class GeminiClient {
 		return await this.generateWithRetry(prompt);
 	}
 
+	public async generateWithPrompts(systemPrompt: string, userPrompt: string): Promise<GeminiResponse> {
+		if (!this.genAI) {
+			return {
+				text: '',
+				success: false,
+				error: 'API anahtarı ayarlanmamış. Lütfen ayarlar sekmesinden API anahtarınızı girin.'
+			};
+		}
+
+		if (!userPrompt.trim()) {
+			return {
+				text: '',
+				success: false,
+				error: 'Yeniden yazılacak metin boş olamaz.'
+			};
+		}
+
+		// Combine system prompt with user prompt
+		const fullPrompt = `${systemPrompt}\n\n${userPrompt}`;
+
+		return await this.generateWithRetry(fullPrompt);
+	}
+
 	private async generateWithRetry(prompt: string, maxRetries: number = 3): Promise<GeminiResponse> {
 		let lastError: string = '';
 		const controller = new AbortController();
