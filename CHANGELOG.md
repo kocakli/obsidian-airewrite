@@ -5,6 +5,42 @@ All notable changes to the AIRewrite plugin will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] - 2025-06-21
+
+### Added
+- 🌍 Multi-language rewrite support (14 languages + custom)
+- 📱 Mobile-optimized language dropdown
+- 🔐 Enhanced security education system
+- 🎨 Clean UI for language selection
+- ⚡ Dynamic prompt generation
+
+### Fixed
+- 📱 Mobile icon display issues
+- 🎨 Language dropdown styling
+- 🔧 Cross-platform compatibility
+
+### Changed
+- 📝 Enhanced settings interface
+- 🚀 Improved mobile performance
+- 🛡️ Better security awareness
+
+---
+
+## [1.1.1] - 2025-06-21
+### Added
+- 🔐 Security education layer
+- 📱 Enhanced mobile support
+
+## [1.1.0] - 2025-06-21
+### Added
+- 📱 Full mobile support
+- 🎯 Touch-optimized interface
+
+## [1.0.0] - 2025-06-21
+### Added
+- 🚀 Initial release
+- 🤖 Gemini AI integration
+
 ## [1.1.0] - 2024-06-21
 
 ### 🎉 Major Update: Full Mobile Support Added!
